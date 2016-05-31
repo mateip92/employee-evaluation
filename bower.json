@@ -1,0 +1,21 @@
+{
+  "name": "employee-evaluation",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Matei Panaitescu"
+  ],
+  "license": "MIT",
+  "homepage": "public/index.html",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "less": "^2.7.1"
+  }
+}
