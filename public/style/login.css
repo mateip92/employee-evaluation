@@ -1,0 +1,17 @@
+.login {
+	margin-top: 25%;
+}
+
+.radio-login {
+	margin-top: 2em;
+	margin-bottom: 2em;
+	font-size: 17px;
+}
+
+.login-input {
+	margin-bottom: 1em;
+}
+
+.radio-inline input{
+	transform: scale(2)
+}
