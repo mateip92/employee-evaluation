@@ -1,16 +1,16 @@
-angular.module("evaluation")
-	.directive("customModal", function() {
-		return {
-			restrict : 'E',
-			templateUrl : 'js/common/modal/modal.html',
-			scope {
-				assesment : "=assesment"
-			},
+angular.module('evaluation')
+  .controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items) {
 
-			link : link;
-		}
+  $scope.items = items;
+  $scope.selected = {
+    item: $scope.items[0]
+  };
 
-		function link() {
-			console.log("WORKING");
-		}
-	});
+  $scope.ok = function () {
+    $uibModalInstance.close($scope.selected.item);
+  };
+
+  $scope.cancel = function () {
+    $uibModalInstance.dismiss('cancel');
+  };
+});

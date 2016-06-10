@@ -2,23 +2,40 @@ angular.module("evaluation")
 	.factory('dataservice', dataservice);
 
 	function dataservice($http){
+		var employee = {};
 		var service ={
-			getEmpEval : getEmpEval;
-			getMgrEval : getMgrEval;
-			addEval : addEval;
+			getEmployee : getEmployee,
+			login : login,
+			getEmpEval : getEmpEval,
+			getMgrEval : getMgrEval,
+			addEval : addEval
 		};
 		return service;
 
-		//post login details and get server security check response, if ok, proceed, if not error message
+		function getEmployee() {
+			return employee;
+		}
+
+		//post login details and get server security check response and employee details, if ok, proceed, if not error message
 		function login(mail, password) {
-			return $http.post('notsurewhaturl', {})
-				.then(reactToOKLogin);
-				.catch(reactToBadLogin);
+			employee = {id : 1, name : "Johhny Doe", manager : "John Doe"};
+			// return $http.post('notsurewhaturl', {})
+			// 	.then(reactToOKLogin);
+			// 	.catch(reactToBadLogin);
+			return true;
 		};
+
+		function okLogin(data) {
+			return data.val;
+		}
+
 
 		//when you log in as emp, pull all the evaluations attached to your name and id
 		function getEmpEval(empId) {
+			var evals = [{id:1, manager: "John Manager", date : "irrelevant date", descript : "lasjdlakjldskjfoijewq", mark : 55},
+			{id:1, manager: "John Manager 2", date : "irrelevant date 2", descript : "lasjdlakjldskjfoijewq", mark : 4}]
 			console.log("I got you your emp evals");
+			return(evals);
 		};
 
 		//when you log in as mgr, pull all the evaluations attached to your name and id

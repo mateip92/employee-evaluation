@@ -11,12 +11,12 @@ function config($stateProvider, $urlRouterProvider) {
 		})
 		.state('employee', {
 			url: '/employee/:id',
-			controller: 'EmployeeController',
+			controller: 'EvaluationController',
 			templateUrl: 'views/employeeView.html'
 		})
 		.state('manager', {
 			url: '/manager/:id',
-			controller: 'ManagerController',
+			controller: 'EvaluationController',
 			templateUrl: 'views/managerView.html'
 		})
 		$urlRouterProvider.otherwise('/login');

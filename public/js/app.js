@@ -1,4 +1,5 @@
 angular.module('evaluation', [
-	'ui.router'
+	'ui.router',
+	'ui.bootstrap'
 	// 'ngCookies'
 	]);
